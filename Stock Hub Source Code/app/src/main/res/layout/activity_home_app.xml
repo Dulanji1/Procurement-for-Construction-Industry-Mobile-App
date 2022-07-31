@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".activity.HomeAppActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fragmentContainer"/>
+
+    <com.luseen.spacenavigation.SpaceNavigationView
+        android:id="@+id/space"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+
+        app:active_item_color="@color/colorAccent"
+        app:centre_button_color="@color/colorPrimary_light"
+        app:centre_button_icon="@drawable/ic_home_black_24dp"
+        app:inactive_item_color="@color/white_with_alpha"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:space_background_color="#36353D"
+        app:active_centre_button_icon_color="@color/White"
+        app:space_item_icon_only_size="@dimen/space_item_icon_only_size"
+        app:inactive_centre_button_icon_color="@color/White"
+        app:active_centre_button_background_color="@color/active_center_button"
+        app:space_item_icon_size="30dp"
+        app:space_item_text_size="@dimen/space_item_text_default_size" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

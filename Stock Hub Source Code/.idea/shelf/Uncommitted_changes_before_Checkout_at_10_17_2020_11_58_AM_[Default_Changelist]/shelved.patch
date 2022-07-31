@@ -1,0 +1,54 @@
+Index: app/src/main/java/com/example/cssemobileapp/activity/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.cssemobileapp.activity;\r\n\r\nimport android.content.Intent;\r\nimport android.content.SharedPreferences;\r\nimport android.os.Build;\r\nimport android.os.Bundle;\r\nimport android.os.Handler;\r\nimport android.view.WindowManager;\r\nimport android.view.animation.Animation;\r\nimport android.view.animation.AnimationUtils;\r\nimport android.widget.ImageView;\r\nimport android.widget.TextView;\r\n\r\nimport androidx.annotation.RequiresApi;\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport com.example.cssemobileapp.R;\r\n\r\npublic class MainActivity extends AppCompatActivity {\r\n\r\n    private static int SPLASH_SCREEN = 5000;\r\n\r\n    Animation topAnimation, bottomAnimation;\r\n    ImageView image;\r\n    TextView logo, tag;\r\n\r\n    SharedPreferences onBoardingScreen;\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);\r\n        setContentView(R.layout.activity_main);\r\n\r\n        topAnimation = AnimationUtils.loadAnimation(this, R.anim.top_animation);\r\n        bottomAnimation = AnimationUtils.loadAnimation(this, R.anim.bottom_animation);\r\n\r\n        image = findViewById(R.id.imageView);\r\n        logo = findViewById(R.id.textView4);\r\n        tag = findViewById(R.id.textView5);\r\n\r\n        image.setAnimation(topAnimation);\r\n        logo.setAnimation(bottomAnimation);\r\n        tag.setAnimation(bottomAnimation);\r\n\r\n        new Handler().postDelayed(new Runnable() {\r\n            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)\r\n            @Override\r\n            public void run() {\r\n\r\n                onBoardingScreen = getSharedPreferences(\"onBoardingScreen\",MODE_PRIVATE);\r\n                boolean isFirstTime = onBoardingScreen.getBoolean(\"firstTime\",true);\r\n\r\n//                if(isFirstTime){\r\n\r\n                SharedPreferences.Editor editor = onBoardingScreen.edit();\r\n                editor.putBoolean(\"firstTime\",false);\r\n                editor.commit();\r\n\r\n                Intent intent = new Intent(MainActivity.this, OnBoarding.class);\r\n                startActivity(intent);\r\n                finish();\r\n\r\n//                } else {\r\n//                    Intent intent = new Intent(MainActivity.this, Login.class);\r\n//\r\n//                    Pair[] pairs = new Pair[2];\r\n//                    pairs[0] = new Pair<View,String>(image,\"logo\");\r\n//                    pairs[1] = new Pair<View,String>(logo,\"logo_text\");\r\n//\r\n//                    ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this,pairs);\r\n//                    startActivity(intent,options.toBundle());\r\n//                    finish();\r\n//                }\r\n            }\r\n        }, SPLASH_SCREEN);\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/cssemobileapp/activity/MainActivity.java	(revision c9ee6197887b95cb30d3658660829822bfb420a5)
++++ app/src/main/java/com/example/cssemobileapp/activity/MainActivity.java	(date 1602916038661)
+@@ -1,21 +1,24 @@
+ package com.example.cssemobileapp.activity;
+ 
++import android.app.ActivityOptions;
+ import android.content.Intent;
+ import android.content.SharedPreferences;
+-import android.os.Build;
+ import android.os.Bundle;
+ import android.os.Handler;
++import android.util.Pair;
++import android.view.View;
+ import android.view.WindowManager;
+ import android.view.animation.Animation;
+ import android.view.animation.AnimationUtils;
+ import android.widget.ImageView;
+ import android.widget.TextView;
+-
+ import androidx.annotation.RequiresApi;
+ import androidx.appcompat.app.AppCompatActivity;
+ 
++
+ import com.example.cssemobileapp.R;
+ 
++
+ public class MainActivity extends AppCompatActivity {
+ 
+     private static int SPLASH_SCREEN = 5000;
+@@ -44,7 +47,7 @@
+         tag.setAnimation(bottomAnimation);
+ 
+         new Handler().postDelayed(new Runnable() {
+-            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
++           // @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+             @Override
+             public void run() {
+ 
+@@ -57,7 +60,7 @@
+                 editor.putBoolean("firstTime",false);
+                 editor.commit();
+ 
+-                Intent intent = new Intent(MainActivity.this, OnBoarding.class);
++                Intent intent = new Intent(MainActivity.this, HomeAppActivity.class);
+                 startActivity(intent);
+                 finish();
+ 

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background1"
+    android:id="@+id/login"
+    tools:context=".activity.Login">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout7"
+            android:layout_width="406dp"
+            android:layout_height="76dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="60dp"
+            android:background="@drawable/rounded_card"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.02">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/materialTextView"
+                android:layout_width="329dp"
+                android:layout_height="51dp"
+                android:layout_marginStart="28dp"
+                android:paddingLeft="70dp"
+                android:text="Sign In"
+                android:textAlignment="textStart"
+                android:textColor="@color/Black"
+                android:textSize="40dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/constraintLayout7"
+                app:layout_constraintVertical_bias="0.034"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/textView444"
+                android:layout_width="284dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="48dp"
+                android:onClick="FogotPWbuttonClickFunction"
+                android:paddingLeft="30dp"
+                android:text="Welcome to Easyorm"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialTextView" />
+
+            <ImageView
+                android:id="@+id/sampleteplistbtn1"
+                android:layout_width="317dp"
+                android:layout_height="59dp"
+                android:layout_marginStart="136dp"
+                app:layout_constraintStart_toStartOf="@+id/materialTextView"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteY="9dp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="402dp"
+            android:layout_height="16dp"
+            android:gravity="center_vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.555"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout7"
+            app:layout_constraintVertical_bias="0.0">
+
+        </RelativeLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="296dp"
+            android:layout_height="403dp"
+            android:background="@drawable/rounded_card2"
+            android:outlineAmbientShadowColor="@color/Black"
+            android:outlineSpotShadowColor="@color/Black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout2"
+            app:layout_constraintVertical_bias="0.322">
+
+            <EditText
+                android:id="@+id/editTextEmailAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#000000"
+                android:ems="10"
+                android:hapticFeedbackEnabled="false"
+                android:hint="User name"
+                android:inputType="textEmailAddress"
+                android:shadowColor="#FFFFFF"
+                android:textAlignment="center"
+                android:textColorHighlight="#000000"
+                android:textColorLink="#000000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.504"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.146" />
+
+            <EditText
+                android:id="@+id/editTextPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#000000"
+                android:backgroundTintMode="multiply"
+                android:ems="10"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:shadowColor="#000000"
+                android:textAlignment="center"
+                android:textColorHighlight="#000000"
+                android:textColorLink="#000000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.504"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextEmailAddress"
+                app:layout_constraintVertical_bias="0.047" />
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="#000000"
+                android:shadowColor="#070707"
+                android:text="Keep me logged in"
+                android:textColor="#000000"
+                android:textColorHighlight="#000000"
+                android:textColorHint="#000000"
+                android:textColorLink="#000000"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/textView"
+                app:layout_constraintHorizontal_bias="0.432"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
+                app:layout_constraintVertical_bias="0.128" />
+
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="119dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="20dp"
+                android:onClick="FogotPWbuttonClickFunction"
+                android:text="Fogot Password?"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
+                app:layout_constraintVertical_bias="0.175" />
+
+
+            <Button
+                android:id="@+id/button_signin"
+                android:layout_width="218dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorSuccess"
+                android:backgroundTint="@color/colorSuccess"
+                android:backgroundTintMode="add"
+                android:fontFamily="monospace"
+                android:text="Sign in"
+                android:textColor="@color/background"
+                android:textColorHighlight="@color/Green"
+                android:textColorHint="@color/colorSuccess"
+                android:textColorLink="@color/colorSuccess"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.548"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                app:layout_constraintVertical_bias="0.109"
+                app:rippleColor="@color/consultant_theme"
+                app:strokeColor="@color/consultant_theme" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_signin"
+                app:layout_constraintVertical_bias="0.428"
+                tools:layout_editor_absoluteX="4dp">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="119dp"
+                    android:text="New to Easyorm ?"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="146dp"
+                    tools:layout_editor_absoluteY="658dp" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/textView2"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="110dp"
+                    android:layout_marginBottom="9dp"
+                    android:text="Go to our web"
+                    android:textColor="#3F51B5"
+                    android:textStyle="bold|italic" />
+            </RelativeLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

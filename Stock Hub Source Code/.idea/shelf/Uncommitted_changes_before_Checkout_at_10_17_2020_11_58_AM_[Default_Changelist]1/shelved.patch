@@ -1,0 +1,55 @@
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    package=\"com.example.cssemobileapp\">\r\n\r\n    <uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />\r\n    <uses-permission android:name=\"android.permission.INTERNET\" />\r\n\r\n\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:icon=\"@mipmap/ic_launcher\"\r\n        android:label=\"@string/app_name\"\r\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/AppTheme\">\r\n        <activity android:name=\".activity.HomeAppActivity\"/>\r\n        <activity android:name=\".activity.MainActivity\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n        </activity>\r\n    </application>\r\n\r\n</manifest>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/AndroidManifest.xml	(revision c9ee6197887b95cb30d3658660829822bfb420a5)
++++ app/src/main/AndroidManifest.xml	(date 1602912027975)
+@@ -21,6 +21,9 @@
+                 <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+         </activity>
++        <meta-data
++            android:name="preloaded_fonts"
++            android:resource="@array/preloaded_fonts" />
+     </application>
+ 
+ </manifest>
+Index: app/src/main/res/layout/slides_layout.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout\r\n    xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:background=\"@color/colorWhite\">\r\n\r\n    <ImageView\r\n        android:id=\"@+id/slider_image\"\r\n        android:layout_width=\"0dp\"\r\n        android:layout_height=\"400dp\"\r\n        android:padding=\"20dp\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:srcCompat=\"@drawable/login_new\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/slider_heading\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n\r\n        android:gravity=\"center\"\r\n        android:text=\"TextView\"\r\n        android:textSize=\"30sp\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.592\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/slider_image\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/slider_desc\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"24dp\"\r\n\r\n        android:gravity=\"center\"\r\n        android:text=\"@string/first_desc\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/slider_heading\" />\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+===================================================================
+--- app/src/main/res/layout/slides_layout.xml	(revision c9ee6197887b95cb30d3658660829822bfb420a5)
++++ app/src/main/res/layout/slides_layout.xml	(date 1602911202619)
+@@ -15,7 +15,7 @@
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+-        app:srcCompat="@drawable/login_new" />
++        app:srcCompat="@drawable/dreport1" />
+ 
+     <TextView
+         android:id="@+id/slider_heading"
+Index: app/src/main/java/com/example/cssemobileapp/activity/SliderAdapter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.cssemobileapp.activity;\r\n\r\nimport android.content.Context;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\nimport android.widget.ImageView;\r\nimport android.widget.TextView;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.constraintlayout.widget.ConstraintLayout;\r\nimport androidx.viewpager.widget.PagerAdapter;\r\n\r\nimport com.example.cssemobileapp.R;\r\n\r\n\r\npublic class SliderAdapter extends PagerAdapter {\r\n\r\n    Context context;\r\n    LayoutInflater layoutInflater;\r\n\r\n    public SliderAdapter(Context context) {\r\n        this.context = context;\r\n    }\r\n\r\n    int images[] = {\r\n            R.drawable.login_new,\r\n            R.drawable.topup_new,\r\n            R.drawable.qrcode_scan_new\r\n    };\r\n\r\n    int headings[] = {\r\n            R.string.first_title,\r\n            R.string.second_title,\r\n            R.string.third_title\r\n    };\r\n\r\n    int descriptions[] = {\r\n            R.string.first_desc,\r\n            R.string.second_desc,\r\n            R.string.third_desc\r\n    };\r\n\r\n    @Override\r\n    public int getCount() {\r\n        return headings.length;\r\n    }\r\n\r\n    @Override\r\n    public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {\r\n        return view == (ConstraintLayout) object;\r\n    }\r\n\r\n    @NonNull\r\n    @Override\r\n    public Object instantiateItem(@NonNull ViewGroup container, int position) {\r\n\r\n        layoutInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);\r\n        View view = layoutInflater.inflate(R.layout.slides_layout,container,false);\r\n\r\n        ImageView imageView = view.findViewById(R.id.slider_image);\r\n        TextView heading = view.findViewById(R.id.slider_heading);\r\n        TextView desc = view.findViewById(R.id.slider_desc);\r\n\r\n        imageView.setImageResource(images[position]);\r\n        heading.setText(headings[position]);\r\n        desc.setText(descriptions[position]);\r\n\r\n        container.addView(view);\r\n\r\n        return view;\r\n    }\r\n\r\n    @Override\r\n    public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {\r\n        container.removeView((ConstraintLayout)object);\r\n    }\r\n}\r\n
+===================================================================
+--- app/src/main/java/com/example/cssemobileapp/activity/SliderAdapter.java	(revision c9ee6197887b95cb30d3658660829822bfb420a5)
++++ app/src/main/java/com/example/cssemobileapp/activity/SliderAdapter.java	(date 1602910951500)
+@@ -24,9 +24,9 @@
+     }
+ 
+     int images[] = {
+-            R.drawable.login_new,
+-            R.drawable.topup_new,
+-            R.drawable.qrcode_scan_new
++            R.drawable.dreport1,
++            R.drawable.dreport1,
++            R.drawable.dreport1
+     };
+ 
+     int headings[] = {
