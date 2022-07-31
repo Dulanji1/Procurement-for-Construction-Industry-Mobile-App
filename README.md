@@ -8,3 +8,13 @@ And also management staff can add suppliers that they are working with the syste
 
 
 ## Screenshots
+
+
+
+<img width="500" alt=" " src="/resource/Picture12.png">
+<img width="500" alt=" " src="/resource/Picture13.png">
+<img width="500" alt=" " src="/resource/Picture14.png">
+<img width="500" alt=" " src="/resource/Picture15.png">
+<img width="500" alt=" " src="/resource/Picture16.png">
+<img width="500" alt=" " src="/resource/Picture17.png">
+<img width="500" alt=" " src="/resource/Picture18.png">
